@@ -1,0 +1,114 @@
+d1 $ sound "bd:4 bd:0 bd:1"
+
+setcps 1
+
+cps
+
+d1 $ sound "bd*3 sn:1 cp sn:1*4"
+
+d1 $ silence
+
+d2 $ sound "hh*7 cp*3"
+
+d3 $ slow 2.5 $ sound "hh:4 hh:5 hh:1 hh:0*3"
+
+d2 $ rev(sound "hh bd cp silence")
+  # gain "1.5"
+  # vowel "a e i o u"
+  # up "0 1 2 3 "
+
+d1 $ sound "bd sd hh cp mt arpy drum odx bd arpy bass2 feel future"
+
+d1 $ sound "[bd bd bd, sd cp sd cp]"
+
+d1 $ sound "bd <arpy:1 arpy:2 arpy:3>"
+
+d1 $ every 4 (rev) (sound "bd*2 [bd [sn sn*2 sn] sn]")
+
+d1 $ every 4 (fast 4) $ sound "bd*2 [bd [sn sn*2 sn] sn]"
+
+d1 $ sound "bd*4" # crush "9"
+
+d1 $ sound "bd*4" # gain "1 0.8 0.5 0.7"
+
+d1 $ sound "bd*4 sn*4" # gain "[[1 0.8]*2 [0.5 0.7]]/2"
+
+d1 $ sound "bd*4" # gain (every 3 (rev) $ "1 0.8 0.5 0.7")
+
+d1 $ gain "1 0.8 0.5 0.7" # sound "bd"
+
+d1 $ every 2 (|> speed "2") $ sound "arpy*4" |> speed "1"
+
+d1 $ every 2 (|* speed "1.5") $ sound "arpy*4" |> speed "1"
+
+d1 $ every 3 (|- note "3") $ every 2 (|+ up "5") $ sound "arpy*4" |> note "0 2 4 5"
+
+d1 $ speed "[1 0.5, 1.5 2 3 4]" # sound "arpy"
+
+d1 $ rev $ up "0 1 2 3 4 5 6 7 8 9 10 11" # sound "arpy"
+
+d1 $ up (run 12) # sound "arpy"
+
+d1 $ sound "bd(5,8)"
+
+d1 $ euclid 5 8 $ sound "bd"
+
+hush
+
+d1 $ sound "bd:3"
+
+d2 $ sound "hh:3/3"
+
+d1 $ sound "bd" # n "3"
+
+d1 $ sound "bd sd:1"
+
+d1 $ sound "bd sd:1"
+
+d2 $ sound "hh hh hh hh"
+
+d3 $ sound "arpy arpy arpy arpy arpy"
+
+p "susan" $ sound "bd sd:1"
+
+p "susan" silence
+
+p "gerard" silence
+
+p "gerard" $ sound "hh hh hh hh"
+
+d1 $ sound "arpy(3,8)" # n "2"
+
+d1 $ sound "arpy(3,8)" # n "2 5"
+
+d1 $ sound "arpy(3,8)" # n (every 4 (* 2) "0 2")
+
+d1 $ n (off 0.125 (+12) $ off 0.25 (+7) $ slow 2 $ "0(3,8) [5 7]") # sound "supergong"
+
+d2 $ n "[0 1 2 3 4 5 6 7] [3 2 1]" # sound "supergong"
+d3 $ up "0 1 2 3 4 5 6 7 8 9 10 11" # sound "arpy"
+
+d1 $ up (run 12) # sound "arpy".
+
+d5 silence
+
+hush
+
+d1 $ sound "[bd bd] [sd sd sd sd sd] [bd sd]"
+
+d1 silence
+
+d2 $ sound "[hh hh hh] [hh bd/2] hh/2"
+
+d1 $ sound "bd*8 sn*8" # speed (range 1 3 $ tri)
+
+d1 $ sound "bd*8 sn*8" # speed (slow 4 $ range 1 3 $ tri)
+
+d1 $ sound "{bd hh sn cp, arpy bass2 drum notes can}"
+
+d1 $ fastcat [sound "bd sn:2" # vowel "[a o]/2",
+             sound "casio casio:1 casio:2*2",
+             sound "drum drum:2 drum:3 drum:4*2"
+            ]
+
+            hush
